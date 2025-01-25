@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Reservas de Hotel</title>
+  <!-- Import Materialize CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <!-- Import Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    .category-section {
+      padding: 2rem 0;
+    }
+    .category-section h4 {
+      margin-bottom: 1.5rem;
+    }
+    .cards-section {
+      padding: 2rem 0;
+    }
+    .cards-section h4 {
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="blue">
+    <div class="nav-wrapper blue container">
+      <a href="#" class="brand-logo">Reservas</a>
+      <a href="#" data-target="mobile-menu" class="sidenav-trigger">
+        <i class="material-icons">menu</i>
+      </a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Categorias</a></li>
+        <li><a href="#">Sobre Nós</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sidenav -->
+  <ul class="sidenav" id="mobile-menu">
+    <li><a href="#">Início</a></li>
+    <li><a href="#">Categorias</a></li>
+    <li><a href="#">Sobre Nós</a></li>
+    <li><a href="#">Contato</a></li>
+  </ul>
+
+  <!-- Carrossel -->
+  <div class="carousel carousel-slider">
+    <a class="carousel-item" href="#"><img src="image1.jpg" alt="Imagem 1"></a>
+    <a class="carousel-item" href="#"><img src="image2.jpg" alt="Imagem 2"></a>
+    <a class="carousel-item" href="#"><img src="image3.jpg" alt="Imagem 3"></a>
+  </div>
+
+  <!-- Seção de Categorias -->
+  <div class="container category-section">
+    <h4 class="center-align">Categorias</h4>
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="image4.jpg" alt="Categoria 1">
+          </div>
+          <div class="card-content center-align">
+            <p>Hotéis de Luxo</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="image1.jpg" alt="Categoria 2">
+          </div>
+          <div class="card-content center-align">
+            <p>Pousadas</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="image3.jpg" alt="Categoria 3">
+          </div>
+          <div class="card-content center-align">
+            <p>Resorts</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Seção de Cards -->
+  <div class="container cards-section">
+    <h4 class="center-align">Locais Disponíveis</h4>
+    <div class="row">
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-image">
+            <img src="image4.jpg" alt="Hotel 1">
+          </div>
+          <div class="card-content">
+            <h5>Hotel Praia Azul</h5>
+            <p>Localizado à beira-mar, ideal para relaxar e aproveitar a natureza.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="blue-text">Reservar Agora</a>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m6">
+        <div class="card">
+          <div class="card-image">
+            <img src="image1.jpg" alt="Hotel 2">
+          </div>
+          <div class="card-content">
+            <h5>Resort da Montanha</h5>
+            <p>Conforto e tranquilidade cercados por belas paisagens.</p>
+          </div>
+          <div class="card-action">
+            <a href="#" class="blue-text">Reservar Agora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Import Materialize JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    // Inicializar Sidenav
+    document.addEventListener('DOMContentLoaded', function() {
+      var sidenav = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(sidenav);
+
+      // Inicializar Carrossel
+      var carousel = document.querySelectorAll('.carousel');
+      M.Carousel.init(carousel, {
+        fullWidth: true,
+        indicators: true
+      });
+
+      // Ativar autoplay no carrossel
+      setInterval(() => {
+        var instance = M.Carousel.getInstance(carousel[0]);
+        instance.next();
+      }, 4000);
+    });
+  </script>
+</body>
+</html>
